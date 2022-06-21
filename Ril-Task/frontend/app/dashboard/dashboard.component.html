@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" >Employee Details</a>
+      <div class="navbar-nav">
+        <a class="nav-link"> 
+        <form>
+          <input [formControl]="search" (keyup)="searchEmployee()" type="text" style="border-color: blue; ; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; width: 300px; height: 40px; margin-left: 10em;" class="form-control" placeholder="            Search Employee!">
+        </form></a>
+        <a class="nav-link" routerLink="/add">Add </a>
+        <a class="nav-link" routerLink="/delete">Delete </a>
+        <a class="nav-link" routerLink="/edit">Update </a>
+        <a class="nav-link" routerLink="/login">Logout</a>
+      </div>
+    </div>
+  
+</nav>     
+
+<div class="container-fluid" style="margin-top: 3.5em;">
+  <table *ngIf="employee; else noData" class="table table-hover table-bordered table-warning text-center fs-4">
+      <thead class="bg-warning">
+          <th>Emp-ID</th>
+          <th>Emp-Name</th>
+          <th>Emp-Dept</th>
+          <th>Email-Id</th>
+          <th>Emp-Level</th>
+      </thead>
+      <tbody>
+          <tr *ngFor="let e of employee">
+              <td> {{e._id}} </td>
+              <td> {{e.emp_name}} </td>
+              <td> {{e.dept}} </td>
+              <td> {{e.email}} </td>
+              <td> {{e.level}} </td>
+          </tr>    
+      </tbody>
+  </table>
+  <ng-template #noData>
+    <p>
+      No Data Available!
+    </p>
+  </ng-template>
+</div>

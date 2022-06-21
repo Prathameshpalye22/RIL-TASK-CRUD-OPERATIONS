@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <h2 class="alert alert-primary text-center">Add Employee</h2>      
+<div  style="width: fit-content;margin-left: 38%; text-align: left;">
+    <div class="form-group" >
+        <label  ><b>Id :</b></label>
+        <input class="form-control" type="number" [formControl]="_id" placeholder="Enter Id">
+    </div><br>
+    <div class="form-group" >
+        <label  ><b>Name :</b></label>
+        <input class="form-control" type="text" [formControl]="emp_name" placeholder="Enter Name">
+    </div><br>
+    <div class="form-group" >
+        <label ><b>Department :</b></label>
+        <input class="form-control" type="text" [formControl]="dept" placeholder="Enter Department">
+    </div><br>
+    <div class="form-group" >
+        <label  ><b>Email :</b></label>
+        <input class="form-control" type="email" [formControl]="email" placeholder="Enter Email-Id">
+    </div><br>
+    <div class="form-group" >
+        <label  ><b>Level :</b></label>
+        <input class="form-control" type="text" [formControl]="level" placeholder="Enter Level">
+    </div><br>
+    <div >
+        <input type="submit" value="Add Employee" (click)="handleAdd()" class="btn btn-primary" style="width: 20em;">
+    </div>
+</div>
+<div>
+    <p *ngIf="employee" class="alert alert-primary text-center fs-4">{{"Employee Added"}}</p>
+</div>
+</div>

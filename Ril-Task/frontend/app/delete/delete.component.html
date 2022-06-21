@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <h3 class="alert alert-warning text-center fs-4">Delete Employee</h3>
+    <div style="width: fit-content;margin-left: 38%; text-align: left;">
+        <div>
+            <b>EMPLOYEE-ID :</b><input type="number" [formControl]="_id" class="form-control">
+        </div>
+        <br>
+        <input type="submit" value="Delete Employee" (click)="handleGet(_id.value)" class="btn btn-danger" style="width:15em"><br/><br/>
+        <div>
+            <p *ngIf="employee" class="alert alert-warning text-center">{{"Employee Deleted"}}</p>
+        </div>
+    </div>
+</div>
+
